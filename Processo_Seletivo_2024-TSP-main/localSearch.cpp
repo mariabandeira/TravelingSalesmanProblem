@@ -6,7 +6,6 @@ void RVND(Solution &s){
 
     std::vector<int> NL = {1, 2, 3, 4, 5};  
     bool improved = false;
-    //int bestMove;
 
     while(NL.empty() == false){
         int n = (rand() % NL.size());
@@ -32,7 +31,6 @@ void RVND(Solution &s){
         }
 
         if (improved){
-            //bestMove = NL[n];
             NL = {1, 2, 3, 4, 5}; 
         }
 
@@ -41,7 +39,7 @@ void RVND(Solution &s){
         }
     
     }
-    //std::cout << "Movimento de vizinhanca utilizado: " << bestMove << std::endl;
+
 }
 
 bool bestImprovementSwap(Solution &s){
@@ -76,7 +74,7 @@ bool bestImprovement2Opt(Solution &s){
     bool improved = false;
 
     for (i = 1; i < data.n - 4; i++){
-        for(j = i + 1; j < data.n - 2; j++){
+        for(j = i + 3; j < data.n - 1; j++){
             delta = s.evaluate2Opt(i, j); 
             if(delta < bestDelta){
                 bestDelta = delta;
